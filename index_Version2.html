@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test di Valutazione - Corso Cinofilo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- INTESTAZIONE -->
+        <header>
+            <div class="logo">
+                <h1>🐕 Test di Valutazione</h1>
+                <p>Corso Cinofilo - Info Marsik9 Academy</p>
+            </div>
+        </header>
+
+        <!-- SCHERMATA INIZIALE -->
+        <div id="start-screen" class="screen active">
+            <div class="start-content">
+                <h2>Benvenuto al Test di Valutazione</h2>
+                <p>Questo test valuta la tua conoscenza su tre moduli:</p>
+                <ul class="modules-list">
+                    <li>📚 La evoluzione del cane</li>
+                    <li>🔬 Guida alla zooantropologia</li>
+                    <li>🧠 Comportamentismo, Cognitivismo e Etologia</li>
+                </ul>
+                
+                <div class="test-info">
+                    <h3>Informazioni sul test:</h3>
+                    <ul>
+                        <li>✓ 30 domande totali (miste)</li>
+                        <li>✓ Domande a risposta multipla e aperta</li>
+                        <li>✓ Tempo: illimitato</li>
+                        <li>✓ Valutazione automatica al termine</li>
+                        <li>✓ Risultati via email</li>
+                    </ul>
+                </div>
+
+                <div class="candidate-info">
+                    <h3>Dati candidato:</h3>
+                    <input type="text" id="candidate-name" placeholder="Nome e Cognome" required>
+                    <input type="email" id="candidate-email" placeholder="Email" required>
+                    <input type="text" id="candidate-phone" placeholder="Telefono (opzionale)">
+                </div>
+
+                <button class="btn-primary" onclick="startTest()">Inizia il Test</button>
+            </div>
+        </div>
+
+        <!-- SCHERMATA TEST -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-container">
+                <!-- PROGRESS BAR -->
+                <div class="progress-section">
+                    <div class="progress-info">
+                        <span>Domanda <span id="current-question">1</span> di <span id="total-questions">30</span></span>
+                        <span id="progress-percentage">0%</span>
+                    </div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+
+                <!-- DOMANDA -->
+                <div class="question-container">
+                    <h2 id="question-text"></h2>
+                    <p id="question-module" class="module-badge"></p>
+                </div>
+
+                <!-- RISPOSTE -->
+                <div id="answers-container" class="answers-container"></div>
+
+                <!-- BOTTONI NAVIGAZIONE -->
+                <div class="navigation-buttons">
+                    <button class="btn-secondary" onclick="previousQuestion()" id="prev-btn">← Indietro</button>
+                    <button class="btn-primary" onclick="nextQuestion()" id="next-btn">Avanti →</button>
+                    <button class="btn-finish" onclick="finishTest()" id="finish-btn" style="display:none;">Invia Risposte</button>
+                </div>
+
+                <!-- INDICATORE RISPOSTE -->
+                <div class="answers-status">
+                    <p id="answers-status-text"></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- SCHERMATA RISULTATI -->
+        <div id="results-screen" class="screen">
+            <div class="results-container">
+                <h2>📊 Risultati del Test</h2>
+                
+                <div class="score-display">
+                    <div class="score-circle" id="score-circle">
+                        <div class="score-number" id="score-number">0</div>
+                        <div class="score-total">/100</div>
+                    </div>
+                    <div class="score-status" id="score-status"></div>
+                </div>
+
+                <div class="score-details">
+                    <div class="detail-box">
+                        <span class="detail-label">Risposte Corrette:</span>
+                        <span class="detail-value" id="correct-answers">0</span>
+                    </div>
+                    <div class="detail-box">
+                        <span class="detail-label">Risposte Sbagliate:</span>
+                        <span class="detail-value" id="wrong-answers">0</span>
+                    </div>
+                    <div class="detail-box">
+                        <span class="detail-label">Domande Non Risposto:</span>
+                        <span class="detail-value" id="unanswered">0</span>
+                    </div>
+                </div>
+
+                <!-- REVISIONE RISPOSTE -->
+                <div class="review-section">
+                    <h3>Revisione Dettagliata</h3>
+                    <div id="review-container"></div>
+                </div>
+
+                <!-- INVIO RISULTATI -->
+                <div class="email-section">
+                    <h3>📧 Invia Risultati via Email</h3>
+                    <p>I tuoi risultati verranno inviati a: <strong id="email-display"></strong></p>
+                    <button class="btn-primary" onclick="sendEmailResults()">Invia Risultati per Email</button>
+                    <div id="email-status" class="email-status"></div>
+                </div>
+
+                <!-- BOTTONI FINALI -->
+                <div class="final-buttons">
+                    <button class="btn-secondary" onclick="restartTest()">🔄 Ricomincia Test</button>
+                    <button class="btn-secondary" onclick="goHome()">🏠 Torna alla Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCRIPT EMAILJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- SCRIPT APPLICAZIONE -->
+    <script src="quiz-data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
