@@ -56,7 +56,6 @@
                 <div class="progress-section">
                     <div class="progress-info">
                         <span>Domanda <span id="current-question">1</span> di <span id="total-questions">30</span></span>
-                        <span id="progress-percentage">0%</span>
                     </div>
                     <div class="progress-bar">
                         <div class="progress-fill" id="progress-fill"></div>
@@ -65,8 +64,8 @@
 
                 <!-- DOMANDA -->
                 <div class="question-container">
+                    <span class="module-badge" id="module-badge"></span>
                     <h2 id="question-text"></h2>
-                    <p id="question-module" class="module-badge"></p>
                 </div>
 
                 <!-- RISPOSTE -->
@@ -76,13 +75,15 @@
                 <div class="navigation-buttons">
                     <button class="btn-secondary" onclick="previousQuestion()" id="prev-btn">← Indietro</button>
                     <button class="btn-primary" onclick="nextQuestion()" id="next-btn">Avanti →</button>
-                    <button class="btn-finish" onclick="finishTest()" id="finish-btn" style="display:none;">Invia Risposte</button>
                 </div>
 
                 <!-- INDICATORE RISPOSTE -->
                 <div class="answers-status">
-                    <p id="answers-status-text"></p>
+                    <p id="answers-status">Domande risposte: 0 su 30</p>
                 </div>
+
+                <!-- BOTTONE TERMINA -->
+                <button class="btn-finish" onclick="finishTest()" id="finish-btn">Termina Test</button>
             </div>
         </div>
 
@@ -92,25 +93,29 @@
                 <h2>📊 Risultati del Test</h2>
                 
                 <div class="score-display">
-                    <div class="score-circle" id="score-circle">
+                    <div class="score-circle">
                         <div class="score-number" id="score-number">0</div>
-                        <div class="score-total">/100</div>
+                        <div class="score-total">/<span id="score-total">30</span></div>
                     </div>
                     <div class="score-status" id="score-status"></div>
                 </div>
 
                 <div class="score-details">
                     <div class="detail-box">
-                        <span class="detail-label">Risposte Corrette:</span>
+                        <span class="detail-label">Risposte Corrette</span>
                         <span class="detail-value" id="correct-answers">0</span>
                     </div>
                     <div class="detail-box">
-                        <span class="detail-label">Risposte Sbagliate:</span>
-                        <span class="detail-value" id="wrong-answers">0</span>
+                        <span class="detail-label">Risposte Errate</span>
+                        <span class="detail-value" id="incorrect-answers">0</span>
                     </div>
                     <div class="detail-box">
-                        <span class="detail-label">Domande Non Risposto:</span>
-                        <span class="detail-value" id="unanswered">0</span>
+                        <span class="detail-label">Non Risposte</span>
+                        <span class="detail-value" id="unanswered-questions">0</span>
+                    </div>
+                    <div class="detail-box">
+                        <span class="detail-label">Percentuale</span>
+                        <span class="detail-value" id="percentage">0%</span>
                     </div>
                 </div>
 
@@ -123,15 +128,15 @@
                 <!-- INVIO RISULTATI -->
                 <div class="email-section">
                     <h3>📧 Invia Risultati via Email</h3>
-                    <p>I tuoi risultati verranno inviati a: <strong id="email-display">infomarsik9academy@gmail.com</strong></p>
-                    <button class="btn-primary" onclick="sendEmailResults()">Invia Risultati per Email</button>
+                    <p>Clicca per inviare i risultati del test via email</p>
+                    <button class="btn-primary" onclick="sendResults()">Invia Risultati</button>
                     <div id="email-status" class="email-status"></div>
                 </div>
 
                 <!-- BOTTONI FINALI -->
                 <div class="final-buttons">
                     <button class="btn-secondary" onclick="restartTest()">🔄 Ricomincia Test</button>
-                    <button class="btn-secondary" onclick="goHome()">🏠 Torna alla Home</button>
+                    <button class="btn-primary" onclick="window.location.reload()">🏠 Torna alla Home</button>
                 </div>
             </div>
         </div>
@@ -141,5 +146,4 @@
     <script src="quiz-data.js"></script>
     <script src="script.js"></script>
 </body>
-</html>
 </html>
