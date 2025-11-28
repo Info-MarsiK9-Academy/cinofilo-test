@@ -25,7 +25,7 @@ body {
     padding: 20px;
 }
 
-.container {
+. container {
     max-width: 900px;
     margin: 0 auto;
 }
@@ -57,7 +57,7 @@ header {
     animation: fadeIn 0.5s ease-in;
 }
 
-.screen.active {
+. screen.active {
     display: block;
 }
 
@@ -80,7 +80,7 @@ header {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-.start-content h2 {
+. start-content h2 {
     color: var(--primary-color);
     margin-bottom: 20px;
     font-size: 2em;
@@ -161,7 +161,7 @@ header {
 /* BOTTONI */
 .btn-primary, .btn-secondary, .btn-finish {
     padding: 12px 30px;
-    font-size: 1.05em;
+    font-size: 1. 05em;
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -182,7 +182,7 @@ header {
     box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
 }
 
-. btn-secondary {
+.btn-secondary {
     background: var(--light-bg);
     color: var(--text-dark);
     border: 2px solid var(--border-color);
@@ -197,7 +197,7 @@ header {
     color: var(--white);
 }
 
-.btn-finish:hover {
+. btn-finish:hover {
     background: #229954;
 }
 
@@ -288,7 +288,7 @@ header {
     background: rgba(52, 152, 219, 0.1);
 }
 
-. answer-option input[type="radio"],
+.answer-option input[type="radio"],
 .answer-option input[type="checkbox"] {
     margin-right: 12px;
     width: 18px;
@@ -296,15 +296,14 @@ header {
     cursor: pointer;
 }
 
-.answer-option label {
+.answer-option span {
     flex: 1;
     cursor: pointer;
-    margin: 0;
 }
 
 .answer-option. selected {
     border-color: var(--secondary-color);
-    background: rgba(52, 152, 219, 0. 15);
+    background: rgba(52, 152, 219, 0.15);
 }
 
 /* RISPOSTA APERTA */
@@ -393,7 +392,7 @@ header {
     font-size: 3em;
 }
 
-. score-total {
+.score-total {
     font-size: 1.2em;
 }
 
@@ -426,7 +425,7 @@ header {
     margin-bottom: 5px;
 }
 
-.detail-value {
+. detail-value {
     display: block;
     color: var(--primary-color);
     font-size: 1.8em;
@@ -569,4 +568,4 @@ header {
     #question-text {
         font-size: 1.1em;
     }
-}
+
