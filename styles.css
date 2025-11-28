@@ -43,7 +43,7 @@ header {
 .logo h1 {
     color: var(--primary-color);
     margin-bottom: 10px;
-    font-size: 2. 5em;
+    font-size: 2.5em;
 }
 
 .logo p {
@@ -161,11 +161,11 @@ header {
 /* BOTTONI */
 .btn-primary, .btn-secondary, .btn-finish {
     padding: 12px 30px;
-    font-size: 1. 05em;
+    font-size: 1.05em;
     border: none;
     border-radius: 6px;
     cursor: pointer;
-    transition: all 0. 3s;
+    transition: all 0.3s;
     font-weight: 600;
     width: 100%;
     margin-top: 20px;
@@ -278,7 +278,7 @@ header {
     padding: 15px;
     margin-bottom: 12px;
     cursor: pointer;
-    transition: all 0. 3s;
+    transition: all 0.3s;
     display: flex;
     align-items: center;
 }
@@ -301,7 +301,7 @@ header {
     cursor: pointer;
 }
 
-.answer-option. selected {
+.answer-option.selected {
     border-color: var(--secondary-color);
     background: rgba(52, 152, 219, 0.15);
 }
@@ -322,7 +322,7 @@ header {
 .open-answer-input:focus {
     outline: none;
     border-color: var(--secondary-color);
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0. 3);
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
 }
 
 /* NAVIGAZIONE */
@@ -455,7 +455,7 @@ header {
     border-left: 4px solid var(--border-color);
 }
 
-.review-item. correct {
+.review-item.correct {
     border-left-color: var(--success-color);
 }
 
@@ -553,7 +553,7 @@ header {
         font-size: 1.8em;
     }
 
-    . navigation-buttons {
+    .navigation-buttons {
         grid-template-columns: 1fr;
     }
 
@@ -568,4 +568,4 @@ header {
     #question-text {
         font-size: 1.1em;
     }
-
+}
