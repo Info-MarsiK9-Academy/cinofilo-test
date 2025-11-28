@@ -22,28 +22,27 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // AVVIA TEST
 function startTest() {
-    const name = document.getElementById('candidate-name').value. trim();
+    const name = document.getElementById('candidate-name').value.trim();
     const email = document.getElementById('candidate-email').value.trim();
-    const phone = document.getElementById('candidate-phone'). value.trim();
-
+    const phone = document.getElementById('candidate-phone').value.trim();
+    
     if (!name || !email) {
         alert('Per favore, inserisci nome e email.');
         return;
     }
-
+    
     // Validazione email
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex. test(email)) {
+    if (!emailRegex.test(email)) {
         alert('Per favore, inserisci un\'email valida.');
         return;
     }
-
+    
     candidateName = name;
     candidateEmail = email;
     candidatePhone = phone;
-
+    
     // Nascondi start screen, mostra quiz
     document.getElementById('start-screen').classList.remove('active');
-    document.getElementById('quiz-screen').classList.add('active
-
-        
+    document.getElementById('quiz-screen').classList.add('active');
+}
